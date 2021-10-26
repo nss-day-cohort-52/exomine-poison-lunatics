@@ -1,7 +1,5 @@
 
-
-
-
+import {colonyMinerals} from "./ColonyMinerals.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
@@ -25,8 +23,8 @@ export const Exomine = () => {
             ${}
         </section>
         <section class="choices__colonies options">
-            <h2>Colonies</h2>
-            ${}
+            <h2>Colony Minerals</h2>
+            ${colonyMinerals()}
         </section>
     </article>
         <article>
