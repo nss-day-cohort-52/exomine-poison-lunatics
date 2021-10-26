@@ -1,5 +1,4 @@
-
-
+import {Governors} from "./Governors.js"
 
 
 
@@ -18,15 +17,15 @@ export const Exomine = () => {
         <article class="choices__base">
         <section class="choices__governer options">
             <h2>Governor</h2>
-            ${}
+            ${Governors()}
         </section>
         <section class="choices__minerals options">
             <h2>Minerals</h2>
-            ${}
+         
         </section>
         <section class="choices__colonies options">
             <h2>Colonies</h2>
-            ${}
+           
         </section>
     </article>
         <article>
@@ -34,7 +33,7 @@ export const Exomine = () => {
         </article>
         <article class="">
             <h2>Space Cart</h2>
-            ${}
+            
         </article>
     `
 }
