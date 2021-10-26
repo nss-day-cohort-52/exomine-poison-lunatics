@@ -85,6 +85,11 @@ export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
 }
 
+export const getTransientState = () => {
+    return database.transientState.map(transient => ({ ...transient }))
+}
+
+
 export const purchaseMineral = () => {
     const newOrder = { ...database.transientState } // Taking a copy of user clicks and putting it into an object. New Order = Shopping Cart
     if (database.colonyMinerals.length === 0) { // Setting an ID for every new item that goes into the minerals table. 
