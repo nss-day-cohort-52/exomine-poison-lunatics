@@ -1,7 +1,9 @@
-import { getColonies, setColonies, getMinerals } from "./database.js";
+import { getColonies, setColonies, getMinerals, purchaseMineral, getGovernors } from "./database.js";
+import { Governors } from "./Governors.js";
 
 const colonies = getColonies()
 const minerals = getMinerals()
+const governors = getGovernors()
 
 document.addEventListener(
     "change",
@@ -14,14 +16,6 @@ document.addEventListener(
 
 export const colonyMineral = () => {
     let html = "<h2>"
-    
-    for (const colony of colonies) {
-        if (transient.length > 0) {
-            html += `Facility Minerals for ${colony.name}`
-        } else {
-            html += "Facility Minerals"
-        }
-    }
 
     html += "</h2>"
     
