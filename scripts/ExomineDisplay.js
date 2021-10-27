@@ -1,11 +1,13 @@
 import {Governors} from "./Governors.js"
 import {facilityMineral} from "./FacilityMinerals.js"
+import { purchaseMineral } from "./database.js"
+import { purchaseMineralHTML } from "./SpaceCart.js"
 
 
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-            addPurchase()
+            purchaseMineral()
     }
 })
 
@@ -33,10 +35,10 @@ export const Exomine = () => {
         </section>
     </article>
         <article>
-            <button id="purchase">Purchase Mineral</button>
+            ${purchaseMineralHTML()}
         </article>
         <article class="">
-            <h2>Space Cart</h2>
+            <h2>Minerals Bought</h2>
             
         </article>
     `
