@@ -37,7 +37,7 @@ export const Facilities = () => {  // creating a function that is a dropdown htm
     html += '<option value="0"> Select your Facility </option>'
 
 const arrayOfOptions= facilities.map ( (facility) => {
-        return `<option value="${facility.id}"> ${facility.name} </option>`
+        return `<option class="select" value="${facility.id}"> ${facility.name} </option>`
     }
 )
 

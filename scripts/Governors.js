@@ -22,7 +22,7 @@ export const Governors = () => {
     
     const arrayOfOptions = GovernorsArray.map( (governor) => {
         
-            return `<option value="${governor.id}--${governor.colonyId}">${governor.name}</option>`
+            return `<option class="select" value="${governor.id}--${governor.colonyId}">${governor.name}</option>`
         }
     )
 
