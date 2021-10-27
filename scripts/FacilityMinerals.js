@@ -2,6 +2,7 @@ import { getFacilities, getMinerals } from "./database.js"
 import { setFacility, setMinerals } from "./database.js"
 import { getTransientState } from "./database.js"
 
+
 const facilities = getFacilities()
 const minerals = getMinerals()
 const transient = getTransientState()
