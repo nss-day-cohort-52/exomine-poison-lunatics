@@ -11,7 +11,7 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "mineralAmount") {
-            setMineral(parseInt(event.target.value))
+            setMinerals(parseInt(event.target.value))
         }
     }
 )
