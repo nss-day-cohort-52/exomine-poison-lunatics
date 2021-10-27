@@ -18,28 +18,31 @@ export const Exomine = () => {
             <img src="" class="logo" />
             <h1 class="title">Solar System Mining Marketplace</h1>
         </header>
-        <article class="choices__base">
-        <section class="choices__governer options">
-            <h2>Governor</h2>
-            ${Governors()}
-        </section>
-        <section class="choices__minerals options">
-            <h2>Minerals</h2>
-         
-        </section>
-        <section class="choices__colonies options">
-        <h2>Facilities</h2>
-       ${Facilities()}
-    </section>
-        <section class="facilityMinerals">
-            ${facilityMineral()}
-        </section>
-    </article>
-        <article>
-            ${purchaseMineralHTML()}
+
+        <article class="governorFacility">
+            <section class="governor">
+                <h2>Governor</h2>
+                ${Governors()}
+                </section>
+            
+            <section class="facility">
+                <h2>Facilities</h2>
+                ${Facilities()}
+            </section>
         </article>
+
+        <article class="facilitySpaceCart">
+            <section class="facilityMinerals">
+                ${facilityMineral()}
+            </section>
+   
+            <section class="spaceCart">
+                ${purchaseMineralHTML()}
+            </section>
+        </article>
+
         <article class="">
-            <h3>Minerals Bought</h3>
+            
             
         </article>
     `
