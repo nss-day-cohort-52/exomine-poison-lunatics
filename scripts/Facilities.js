@@ -17,18 +17,18 @@ document.addEventListener( //
         }
     }
 )
-document.addEventListener( // 
-    "change",
-    (changeEvent) => {
-        if (changeEvent.target.id === "facilities") {  //change event target is paints
-            const chosenOption = changeEvent.target.value  //variable is made to equal the "paints" target
-            console.log(chosenOption)  // "1" or "2" // console log the variable chosen option
-        }
-    }
-)
+// document.addEventListener( // 
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.id === "facilities") {  //change event target is paints
+//             const chosenOption = changeEvent.target.value  //variable is made to equal the "paints" target
+//             console.log(chosenOption)  // "1" or "2" // console log the variable chosen option
+//         }
+//     }
+// )
 
 export const Facilities = () => {  // creating a function that is a dropdown html element
-    let html = "<Facilities>"  // html element name facilities 
+    let html = " "  // html element name facilities 
     html += '<select id="facilities">'// using addition assignment to  
     html += '<option value="0"> Select your Facility Type </option>'
 
