@@ -1,9 +1,9 @@
-import { getFacility, setFacility } from "./database.js" //importing the getInterior function which is a function that creates a copy of the original
+import { getFacilities, setFacility } from "./database.js" //importing the getInterior function which is a function that creates a copy of the original
 //interior array from the database
 
 
 //creating a variable that equals the function getInterior which creates a copy of the interior array from the database invoked function
-const facilities = getFacility()
+const facilities = getFacilities()
 
 
 document.addEventListener( // 
