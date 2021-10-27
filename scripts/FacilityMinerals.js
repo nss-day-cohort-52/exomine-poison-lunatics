@@ -21,11 +21,13 @@ export const facilityMineral = () => {
     
     for (const facility of facilities) {
         if (transient.length > 0) {
-            html += `Facility Minerals for ${facility.name}`
-        } else {
-            html += "Facility Minerals"
-        }
+            if (transient.facilityId === facility.id) {
+                html += `Facility Minerals for ${facility.name}`
+            } else {
+                html += "Facility Minerals"
+         }
     }
+}
 
     html += "</h3>"
     
