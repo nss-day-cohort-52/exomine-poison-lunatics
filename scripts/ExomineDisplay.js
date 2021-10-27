@@ -1,14 +1,15 @@
-import {Governors} from "./Governors.js"
-import {facilityMineral} from "./FacilityMinerals.js"
+import { Governors } from "./Governors.js"
+import { facilityMineral } from "./FacilityMinerals.js"
 import { getFacilities, purchaseMineral } from "./database.js"
 import { purchaseMineralHTML } from "./SpaceCart.js"
 import { Facilities } from "./Facilities.js"
+import { colonyMinerals } from "./ColonyMinerals.js"
 
 
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-            purchaseMineral()
+        purchaseMineral()
     }
 })
 
@@ -24,8 +25,7 @@ export const Exomine = () => {
             ${Governors()}
         </section>
         <section class="choices__minerals options">
-            <h2>Minerals</h2>
-         
+         ${colonyMinerals()}
         </section>
         <section class="choices__colonies options">
         <h2>Facilities</h2>
