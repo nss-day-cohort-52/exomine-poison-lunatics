@@ -19,15 +19,16 @@ document.addEventListener(
 export const facilityMineral = () => {
     let html = "<h3>"
     
+
+    let htmlHeader = "Facility Minerals"
+
     for (const facility of facilities) {
-        if (transient.length > 0) {
-            if (transient.facilityId === facility.id) {
-                html += `Facility Minerals for ${facility.name}`
-            } else {
-                html += "Facility Minerals"
-         }
+        if (transient.facilityId === facility.id) {
+            htmlHeader = `Facility Minerals for ${facility.name}`
+        }    
     }
-}
+    
+    html += htmlHeader
 
     html += "</h3>"
     

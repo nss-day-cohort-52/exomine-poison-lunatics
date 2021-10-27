@@ -27,12 +27,12 @@ export const Exomine = () => {
             <h2>Minerals</h2>
          
         </section>
+        <section class="choices__colonies options">
+        <h2>Facilities</h2>
+       ${Facilities()}
+    </section>
         <section class="facilityMinerals">
             ${facilityMineral()}
-        </section>
-        <section class="choices__colonies options">
-            <h2>Facilities</h2>
-           ${Facilities()}
         </section>
     </article>
         <article>
