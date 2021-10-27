@@ -30,10 +30,10 @@ document.addEventListener( //
 export const Facilities = () => {  // creating a function that is a dropdown html element
     let html = " "  // html element name facilities 
     html += '<select id="facilities">'// using addition assignment to  
-    html += '<option value="0"> Select your Facility Type </option>'
+    html += '<option value="0"> Select your Facility </option>'
 
 const arrayOfOptions= facilities.map ( (facility) => {
-        return `<option value="${facility.id}"> ${facility.type} </option>`
+        return `<option value="${facility.id}"> ${facility.name} </option>`
     }
 )
 

@@ -2,7 +2,7 @@ import { purchaseMineral } from "./database.js"
 
 export const purchaseMineralHTML = () => {
   return `
-    <button id="orderButton">Purchase Mineral</button>
+    <button id="orderButton">Space Cart</button>
   `
 }
 

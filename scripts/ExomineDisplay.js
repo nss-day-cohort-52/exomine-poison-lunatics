@@ -38,7 +38,7 @@ export const Exomine = () => {
             ${purchaseMineralHTML()}
         </article>
         <article class="">
-            <h2>Minerals Bought</h2>
+            <h3>Minerals Bought</h3>
             
         </article>
     `
