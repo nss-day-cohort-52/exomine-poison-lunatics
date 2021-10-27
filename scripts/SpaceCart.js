@@ -1,6 +1,6 @@
-import { purchaseMineral } from "./database.js"
+import { purchaseMineral } from "./database.js"  
 
-export const purchaseMineralHTML = () => {
+export const purchaseMineralHTML = () => {  
   return `
     <button id="orderButton">Purchase Mineral</button>
   `
