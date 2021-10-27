@@ -11,6 +11,10 @@ document.addEventListener( //
     (changeEvent) => {
         if (changeEvent.target.id === "facilities") {  //change event target is facilities
             setFacility(parseInt(changeEvent.target.value))
+            // This is the custom event that resets the html 
+            // When the facility is clicked it stores the facility in transient state
+            // Then it calls are event listener that signals that the state has changed 
+            // This allows the if statement on facilityMinerals.js to know it changed
             document.dispatchEvent(new CustomEvent("stateChanged"))   
                
             
