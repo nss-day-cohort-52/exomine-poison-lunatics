@@ -11,7 +11,7 @@ document.addEventListener( //
     (changeEvent) => {
         if (changeEvent.target.id === "facilities") {  //change event target is facilities
             setFacility(parseInt(changeEvent.target.value))
-                
+            document.dispatchEvent(new CustomEvent("stateChanged"))   
                
             
         }
