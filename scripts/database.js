@@ -95,6 +95,10 @@ export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
 }
 
+export const getMineralFacilities = () => {
+    return database.mineralFacilities.map(mineralFacilities => ({ ...mineralFacilities }))
+}
+
 export const getTransientState = () => {
     return database.transientState
 }
