@@ -6,17 +6,6 @@ const minerals = getMinerals()
 const governors = getGovernors()
 const transient = getTransientState()
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "governor") {
-//             setColonies(parseInt(event.target.value))
-
-//         }
-//     }
-// )
-
-
 export const colonyMinerals = () => {
     let html = "<h2>"
     let htmlHeader = "Colony Minerals"
