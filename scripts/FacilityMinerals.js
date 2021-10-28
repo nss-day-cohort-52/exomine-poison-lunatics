@@ -1,7 +1,7 @@
 import { getFacilities, getMinerals } from "./database.js"
 import { setFacility, setMinerals } from "./database.js"
 import { getTransientState } from "./database.js"
-
+import { purchaseMineral } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
@@ -15,6 +15,7 @@ document.addEventListener(
         if (event.target.name === "mineralAmount") {
             setMinerals(parseInt(event.target.value))
         }
+
     }
 )
 
