@@ -21,12 +21,12 @@ const database = {
         { id: 5, name: "Solaris" }
     ],
     facilities: [
-        { id: 1, name: "Twitter", activeStatus: true },
+        { id: 1, name: "Twitter", activeStatus: false },
         { id: 2, name: "Faceplace", activeStatus: true },
         { id: 3, name: "Snapcat", activeStatus: true },
         { id: 4, name: "Instaglam", activeStatus: true },
         { id: 5, name: "TicTac", activeStatus: true },
-        { id: 6, name: "Gloogle", activeStatus: true },
+        { id: 6, name: "Gloogle", activeStatus: false },
         { id: 7, name: "Amazonia", activeStatus: true },
         { id: 8, name: "Fender", activeStatus: true },
         { id: 9, name: "NSS", activeStatus: true },
