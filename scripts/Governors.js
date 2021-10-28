@@ -21,6 +21,7 @@ export const Governors = () => {
 
     
     const arrayOfOptions = GovernorsArray.map( (governor) => {
+        if(governor.activeStatus === true)
         
             return `<option class="select" value="${governor.id}--${governor.colonyId}">${governor.name}</option>`
         }

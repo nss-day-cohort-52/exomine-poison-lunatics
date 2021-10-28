@@ -15,9 +15,9 @@ document.addEventListener( //
             // When the facility is clicked it stores the facility in transient state
             // Then it calls are event listener that signals that the state has changed 
             // This allows the if statement on facilityMinerals.js to know it changed
-            document.dispatchEvent(new CustomEvent("stateChanged"))   
-               
-            
+            document.dispatchEvent(new CustomEvent("stateChanged"))
+
+
         }
     }
 )
@@ -36,14 +36,14 @@ export const Facilities = () => {  // creating a function that is a dropdown htm
     html += '<select id="facilities">'// using addition assignment to  
     html += '<option value="0"> Select your Facility </option>'
 
-const arrayOfOptions= facilities.map ( (facility) => {
-        return `<option class="select" value="${facility.id}"> ${facility.name} </option>`
+    for (const facility of facilities) {
+        if (facility.activeStatus === true) {
+            html += `<option class="select" value="${facility.id}"> ${facility.name} </option>`
+        }
     }
-)
 
-    html += arrayOfOptions.join ("")
     html += "</select>"
-    return html  
+    return html
 
 }
 
