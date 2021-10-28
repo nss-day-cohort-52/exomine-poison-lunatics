@@ -21,14 +21,14 @@ export const Exomine = () => {
         </header>
 
         <article class="topHalf">
-        <article class="governorFacility">
+          <article class="governorFacility">
             <section class="governor">
-                <p>Choose a Governor</p>
+                <h1>Choose a Governor</h1>
                 ${Governors()}
                 </section>
             
             <section class="facility">
-                <p>Choose a Facility</p>
+                <h1>Choose a Facility</h1>
                 ${Facilities()}
             </section>
         </article>
