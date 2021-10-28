@@ -1,10 +1,10 @@
 const database = {
     governors: [
-        { id: 1, name: "Cheezus Crust", activeStatus: true, colonyId: 1 },
+        { id: 1, name: "Cheezus Crust", activeStatus: false, colonyId: 1 },
         { id: 2, name: "Thomas Basil", activeStatus: true, colonyId: 1 },
-        { id: 3, name: "Joe Dirt", activeStatus: true, colonyId: 1 },
+        { id: 3, name: "Joe Dirt", activeStatus: false, colonyId: 1 },
         { id: 4, name: "Asap Rocky Road", activeStatus: true, colonyId: 2 },
-        { id: 5, name: "Chicken Corbon Bleu", activeStatus: true, colonyId: 2 },
+        { id: 5, name: "Chicken Corbon Bleu", activeStatus: false, colonyId: 2 },
         { id: 6, name: "Mandy Smore", activeStatus: true, colonyId: 3 },
         { id: 7, name: "Will-Eye Spam", activeStatus: true, colonyId: 2 },
         { id: 8, name: "Reeses Witherspoon", activeStatus: true, colonyId: 2 },
