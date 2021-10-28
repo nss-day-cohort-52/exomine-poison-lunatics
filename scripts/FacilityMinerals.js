@@ -52,5 +52,7 @@ export const facilityMineral = () => {
     return html
 }
 
+// loop through mineralfacility
+// if (transient.facilityId === facility.id) 
 
 
