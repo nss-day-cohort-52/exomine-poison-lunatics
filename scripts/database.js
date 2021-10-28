@@ -101,7 +101,7 @@ export const getTransientState = () => {
 
 const transient = getTransientState()
 
-const minerals = database.minerals
+const minerals = database.mineralFacilities
 
 export const purchaseMineral = () => {
     const newOrder = { ...database.transientState } // Taking a copy of user clicks and putting it into an object. New Order = Shopping Cart
