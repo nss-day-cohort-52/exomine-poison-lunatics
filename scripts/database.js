@@ -59,12 +59,21 @@ const database = {
     
     colonyMinerals: [
         { id: 1, amount: 0, colonyId: 1, mineralId: 1 },
-        { id: 2, amount: 0, colonyId: 1, mineralId: 1 },
-        { id: 3, amount: 0, colonyId: 3, mineralId: 1 }
+        { id: 2, amount: 0, colonyId: 1, mineralId: 2 },
+        { id: 3, amount: 0, colonyId: 3, mineralId: 3 },
+        { id: 4, amount: 0, colonyId: 3, mineralId: 4 },
+        { id: 5, amount: 0, colonyId: 3, mineralId: 5 },
+        { id: 6, amount: 0, colonyId: 3, mineralId: 6 },
+        { id: 7, amount: 0, colonyId: 3, mineralId: 7 },
+        { id: 8, amount: 0, colonyId: 3, mineralId: 8 },
+        { id: 9, amount: 0, colonyId: 3, mineralId: 9 },
+        { id: 10, amount: 0, colonyId: 3, mineralId: 10 },
+        { id: 11, amount: 0, colonyId: 3, mineralId: 11},
+        { id: 12, amount: 0, colonyId: 3, mineralId: 12}
     ],
 
     transientState: {
-
+        
     },
 
 }
@@ -106,7 +115,7 @@ export const getMinerals = () => {
 }
 
 export const getTransientState = () => {
-    return database.transientState
+    return {...database.transientState}
 }
 
 export const getColonyMinerals = () => {
@@ -140,7 +149,7 @@ export const purchaseMineral = () => {
             // Find the facility mineral that was chosen by the users
             const mineralPurchasedObject = database.mineralFacilities.find(
                 (mineralFacilityObject) => {
-                    return transient.mineralId === mineralFacilityObject.id
+                    return transient.mineralId === mineralFacilityObject.mineralId
                 }
             )
 
@@ -150,7 +159,7 @@ export const purchaseMineral = () => {
             // Find the colony mineral that should be incremented by one
             const colonyPurchasedObject = database.colonyMinerals.find(
                 (colMineral) => {
-                    return transient.colonyId === colMineral.id
+                        return transient.mineralId === colMineral.id
                     //Colony matches colonyMinerals
                 })
                 colonyPurchasedObject.amount++

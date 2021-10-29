@@ -35,19 +35,22 @@ export const colonyMinerals = () => {
     html += "</h2>"
 
 
-    html += '<option value="0">Select a Governor </option>'
+    
 
 
     html += "<ul>"
   
-        
+    
+  
         for (const colMineral of cMinerals) {
-            for (const mineral of minerals) {
-                if (colMineral.mineralId === mineral.id) {
-                    html += `<li
-                    name="mineralCount" value="${mineral.id}" /> ${colMineral.amount} tons of ${mineral.name}
+            if (transient.mineralId === colMineral.id) {
+                for (const mineral of minerals) {
+                    if (colMineral.id === mineral.id){
+                        html += `<li
+                        name="mineralCount" value="${mineral.id}" /> ${colMineral.amount} tons of ${mineral.name}
                         </li>`
                     }
+                }
             }
             
         }
