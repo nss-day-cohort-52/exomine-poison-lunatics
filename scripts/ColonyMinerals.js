@@ -29,51 +29,32 @@ export const colonyMinerals = () => {
             }
         }
     }
-
-    html += getHtml
     
     html += htmlHeader
 
     html += "</h2>"
-
-  
-        
-        for (const colMineral of minerals) {
-            if (filteredMin.mineralId === mineral.id) {
-                    return `<li>
-                        name="mineralCount" value="${mineral.id}" /> ${filteredMin.added} tons of ${mineral.name}
-                        /li>`
-                    }
-                }
-            }
-    
-
-    // const foundcolonies = colonies.find(
-    //     (colony) => {
-    //         return colony.id === governors.colonyId
-    //     }
-    // )
-
-
 
 
     html += '<option value="0">Select a Governor </option>'
 
 
     html += "<ul>"
-
-
-    
-
-    
-
-    
-
-
-
-
+  
+        
+        for (const colMineral of cMinerals) {
+            for (const mineral of minerals) {
+                if (colMineral.mineralId === mineral.id) {
+                    html += `<li
+                    name="mineralCount" value="${mineral.id}" /> ${colMineral.amount} tons of ${mineral.name}
+                        </li>`
+                    }
+            }
+            
+        }
+ 
     html += "</ul>"
     return html
 }
+
 
 

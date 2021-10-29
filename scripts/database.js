@@ -113,6 +113,10 @@ export const getColonyMinerals = () => {
     return database.colonyMinerals.map(colonyMinerals => ({ ...colonyMinerals }))
 }
 
+export const getMineralFacilities = () => {
+    return database.mineralFacilities.map(mineralFacility => ({ ...mineralFacility }))
+}
+
 
 
 
@@ -136,7 +140,7 @@ export const purchaseMineral = () => {
             // Find the facility mineral that was chosen by the users
             const mineralPurchasedObject = database.mineralFacilities.find(
                 (mineralFacilityObject) => {
-                    return transientState.mineralId === mineralFacilityObject.id
+                    return transient.mineralId === mineralFacilityObject.id
                 }
             )
 
@@ -146,7 +150,7 @@ export const purchaseMineral = () => {
             // Find the colony mineral that should be incremented by one
             const colonyPurchasedObject = database.colonyMinerals.find(
                 (colMineral) => {
-                    return transientState.colonyId === colMineral.id
+                    return transient.colonyId === colMineral.id
                     //Colony matches colonyMinerals
                 })
                 colonyPurchasedObject.amount++
