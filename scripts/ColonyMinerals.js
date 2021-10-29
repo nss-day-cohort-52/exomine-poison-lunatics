@@ -20,6 +20,16 @@ export const colonyMinerals = () => {
     let html = "<h2>"
     let htmlHeader = "Colony Minerals"
 
+    for (const governor of governors) {
+        if (transient.governorId === governor.id) {
+            for (const colony of colonies) {
+                if (transient.colonyId === colony.id) {
+                    htmlHeader = `${colony.name} Minerals`
+                }
+            }
+        }
+    }
+
     html += getHtml
     
     html += htmlHeader
