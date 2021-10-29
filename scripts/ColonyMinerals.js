@@ -2,7 +2,7 @@ import { getColonies, setColonies, getMinerals, purchaseMineral, getGovernors, g
 import { Governors } from "./Governors.js";
 import { setAddedAmount } from "./database.js";
 import { getColonyMinerals } from "./database.js";
-import { getHtml } from "./database.js";
+
 
 
 const colonies = getColonies()
@@ -16,7 +16,6 @@ export const colonyMinerals = () => {
 
     const transient = getTransientState()
     const cMinerals = getColonyMinerals()
-    const getHtml = getHtml()
 
     let html = "<h2>"
     let htmlHeader = "Colony Minerals"
@@ -27,7 +26,17 @@ export const colonyMinerals = () => {
 
     html += "</h2>"
 
-
+  
+        
+        for (const colMineral of minerals) {
+            if (filteredMin.mineralId === mineral.id) {
+                    return `<li>
+                        name="mineralCount" value="${mineral.id}" /> ${filteredMin.added} tons of ${mineral.name}
+                        /li>`
+                    }
+                }
+            }
+    
 
     // const foundcolonies = colonies.find(
     //     (colony) => {
