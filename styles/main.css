@@ -1,13 +1,17 @@
 .governorFacility {
     margin-bottom: 50px; 
+    display: flex;
+    flex-direction: column;
 }
 
 .governor {
     display: flex; 
+    
 }
 
 .facility {
     display: flex; 
+    padding-top: 2rem;
 }
 
 .facilitySpaceCart {
@@ -35,6 +39,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    text-align: center;
 }
 
 .spaceCart {
@@ -44,6 +49,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    text-align: center;
 }
 
 
@@ -55,3 +61,7 @@
     color: black; 
     font-size: 1rem;
 }
+
+/* body {
+    background-image: url(https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730.jpg;)
+} */
