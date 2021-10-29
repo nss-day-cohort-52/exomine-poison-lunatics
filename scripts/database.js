@@ -58,12 +58,15 @@ const database = {
     ],
     
     colonyMinerals: [
-        { id: 1, amount: 0, colonyId: 1, mineralId: 1 }
+        { id: 1, amount: 0, colonyId: 1, mineralId: 1 },
+        { id: 2, amount: 0, colonyId: 1, mineralId: 1 },
+        { id: 3, amount: 0, colonyId: 3, mineralId: 1 }
     ],
 
     transientState: {
 
-    }
+    },
+
 }
 
 // document.dispatchEvent( new CustomEvent("stateChanged") )
@@ -79,8 +82,15 @@ export const setColonies = (Id) => {
 }
 export const setMinerals = (Id) => {
     database.transientState.mineralId = Id
-
 }
+export const setAddedAmount = (value) => {
+    database.transientState.added = value
+}
+
+
+
+
+
 
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
@@ -95,42 +105,60 @@ export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
 }
 
-export const getMineralFacilities = () => {
-    return database.mineralFacilities.map(mineralFacilities => ({ ...mineralFacilities }))
-}
-
 export const getTransientState = () => {
     return database.transientState
 }
+
+export const getColonyMinerals = () => {
+    return database.colonyMinerals.map(colonyMinerals => ({ ...colonyMinerals }))
+}
+
+export const getMineralFacilities = () => {
+    return database.mineralFacilities.map(mineralFacility => ({ ...mineralFacility }))
+}
+
+
+
 
 const transient = getTransientState()
 
 const minerals = database.mineralFacilities
 
 export const purchaseMineral = () => {
-    const newOrder = { ...database.transientState } // Taking a copy of user clicks and putting it into an object. New Order = Shopping Cart
-    if (database.colonyMinerals.length === 0) { // Setting an ID for every new item that goes into the minerals table. 
-        database.transientState.id = 1
-    } else {
-        const lastIndex = database.colonyMinerals.length - 1 //Once number 1 has been found, this will add a Unique ID to any new "orders" input into the colony minerals. 
-        const newID = database.colonyMinerals[lastIndex].id + 1
-        database.transientState.id = newID
+    // setAddedAmount(parseInt(5))
+    const findGovernor = database.governors.find(
+        (governor) => {
+            return governor.id === transient.governorId
+        })
+
+    if (findGovernor) { // Govenor matches setGovernor
+        const findColony = database.colonies.find(
+            (colony) => {
+                return colony.id === findGovernor.colonyId
+                // Colony matches governor
+            }) 
+            // Find the facility mineral that was chosen by the users
+            const mineralPurchasedObject = database.mineralFacilities.find(
+                (mineralFacilityObject) => {
+                    return transient.mineralId === mineralFacilityObject.id
+                }
+            )
+
+            // Decrement tha object quantity property by one 
+                mineralPurchasedObject.amount--
+
+            // Find the colony mineral that should be incremented by one
+            const colonyPurchasedObject = database.colonyMinerals.find(
+                (colMineral) => {
+                    return transient.colonyId === colMineral.id
+                    //Colony matches colonyMinerals
+                })
+                colonyPurchasedObject.amount++
     }
-    // Add the new order object to custom orders state
-    database.colonyMinerals.push(newOrder)
-    // Reset the temporary state for user choices
-    database.transientState = {}
-    // Broadcast custom event to entire documement so that the
-    // application can re-render and update state
-    for (const mineral of minerals) {
-        if (mineral.id === transient.mineralId) {
-            let mineralAmount =mineral.amount 
-            mineralAmount -= 5
-            
-        }
-        return mineralAmount
-    }
-    let orderAmount = 5 
+   
+
+
+
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
