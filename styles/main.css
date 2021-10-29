@@ -27,7 +27,6 @@
 }
 
 .title {
-    text-align: center;
     font-family:American Typewriter, serif;
     font-size: 3rem;
     color: rgb(43, 43, 42);
@@ -43,7 +42,6 @@
     font-size: 25px;
     color: rgb(15, 221, 108);
     text-shadow: .5px 0px 2px rgb(8, 8, 8);
-    text-align: center;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: .5rem;
@@ -53,7 +51,6 @@
 
 .spaceCart {
     flex-basis: 24%;
-    text-align: center;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: .5rem;
