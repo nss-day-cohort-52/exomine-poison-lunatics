@@ -21,14 +21,14 @@ export const Exomine = () => {
         </header>
 
         <article class="topHalf">
-          <article class="governorFacility">
+        <article class="governorFacility">
             <section class="governor">
-                <h1>Choose a Governor</h1>
+                <h3>Choose a Governor</h3>
                 ${Governors()}
                 </section>
             
             <section class="facility">
-                <h1>Choose a Facility</h1>
+                <h3>Choose a Facility</h3>
                 ${Facilities()}
             </section>
         </article>
@@ -44,7 +44,7 @@ export const Exomine = () => {
             </section>
    
             <section class="spaceCart">
-                <h2>Space Cart</h2>
+                <h4>Space Cart</h4>
                 ${purchaseMineralHTML()}
             </section>
 

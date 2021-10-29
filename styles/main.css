@@ -15,7 +15,10 @@
 }
 
 .facilitySpaceCart {
-    display: flex;
+
+    color: rgb(224, 9, 9);
+    text-shadow: 1px 0px 2px rgb(101, 102, 102);
+    display:flex;
     justify-content: space-evenly; 
 }
 
@@ -25,9 +28,15 @@
 }
 
 .colonyMinerals {
-    color: rgb(10, 158, 168);
-    text-shadow: 1px 0px 2px rgb(48, 48, 49);
-     
+    color: rgb(238, 244, 245);
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0, 213, 255, 0.733) 100%);
+    text-shadow: 1px 0px 2px rgb(101, 102, 102);
+    margin: 0 2rem;
+    border: 1px dashed dodgerblue;
+    padding: .5rem;
+    border-radius: 0.5rem;
+    box-shadow:0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }
 
 .title {
@@ -35,10 +44,10 @@
     text-align: center;
     font-size: 3rem;
     color: rgb(43, 43, 42);
-    text-shadow: 2px 0px 2px rgb(241, 243, 245);
+    text-shadow: 2px 0px 2px rgb(255, 255, 255);
     box-shadow:0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
-
-    background-color: black;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(27, 27, 27) 35%, rgba(60, 53, 100, 0.733) 100%);
+    
     
 }
 
@@ -46,17 +55,18 @@
     flex-basis: 24%;
     font-size: 20px;
     color: rgb(15, 221, 108);
-    text-shadow: .5px 0px 2px rgb(8, 8, 8);
+    text-shadow: 1px 0px 2px rgb(101, 102, 102);
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: .5rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
-    background-color: black;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(71, 9, 121) 35%, rgba(0, 213, 255, 0.733) 100%);
     text-align: center;
 }
 
 .spaceCart {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(64, 195, 228) 50%, rgba(98, 0, 255, 0.733) 100%);
     flex-basis: 24%;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
@@ -79,5 +89,21 @@
 
  body {
     background-image: url(https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730.jpg;);
-background-size: auto;
+background-size:cover
 } 
+h2 {
+    color: rgba(253, 255, 251, 0.966);
+    text-shadow: 2px 0px 2px rgb(108, 4, 206);
+    
+}
+h3 {
+    color: rgb(246, 245, 247);
+    text-shadow: 2px 0px 2px rgb(108, 4, 206);
+   
+}
+
+h4{
+    color:rgb(10, 13, 170);
+    font-size:23px;
+    text-shadow: 1px 0px 2px rgb(230, 238, 238);
+}
