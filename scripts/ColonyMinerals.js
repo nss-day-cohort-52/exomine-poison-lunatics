@@ -1,15 +1,25 @@
 import { getColonies, setColonies, getMinerals, purchaseMineral, getGovernors, getTransientState } from "./database.js";
 import { Governors } from "./Governors.js";
+import { setAddedAmount } from "./database.js";
+import { getColonyMinerals } from "./database.js";
+
+
 
 const colonies = getColonies()
 const minerals = getMinerals()
 const governors = getGovernors()
-const transient = getTransientState()
 
-export const colonyMinerals = () => { // this will display the html header for "colony minerals" 
+
+
+
+export const colonyMinerals = () => {
+
+    const transient = getTransientState()
+    const cMinerals = getColonyMinerals()
+
     let html = "<h2>"
     let htmlHeader = "Colony Minerals"
-// this double loop will find which governor is selected in the drop down and then pair that goveror with their colony ID so it will show their colonies materials on the right side.
+
     for (const governor of governors) {
         if (transient.governorId === governor.id) {
             for (const colony of colonies) {
@@ -19,38 +29,32 @@ export const colonyMinerals = () => { // this will display the html header for "
             }
         }
     }
+    
     html += htmlHeader
 
     html += "</h2>"
 
 
+    html += '<option value="0">Select a Governor </option>'
+
+
+    html += "<ul>"
+  
+        
+        for (const colMineral of cMinerals) {
+            for (const mineral of minerals) {
+                if (colMineral.mineralId === mineral.id) {
+                    html += `<li
+                    name="mineralCount" value="${mineral.id}" /> ${colMineral.amount} tons of ${mineral.name}
+                        </li>`
+                    }
+            }
+            
+        }
+ 
+    html += "</ul>"
     return html
 }
 
 
-
-
-
-
-
-    // const foundcolonies = colonies.find(
-    //     (colony) => {
-    //         return colony.id === governors.colonyId
-    //     }
-    // )
-
-
-
-
-    // html += '<option value="0">Select a Governor </option>'
-
-
-//     html += "<ul>"
-
-//     for (const mineral of minerals) {
-//         html += `<li>
-//                 <name="mineralCount" value="${mineral.id}" /> ${mineral.amount} tons of ${mineral.name}
-//                 </li>`
-//     }
-//     html += "</ul>"
 
