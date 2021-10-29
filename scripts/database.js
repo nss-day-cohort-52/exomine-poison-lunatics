@@ -1,3 +1,4 @@
+import { getHtml } from "./ColonyMinerals.js";
 const database = {
     governors: [
         { id: 1, name: "Cheezus Crust", activeStatus: false, colonyId: 1 },
@@ -58,12 +59,15 @@ const database = {
     ],
     
     colonyMinerals: [
-        { id: 1, amount: 0, colonyId: 1, mineralId: 1 }
+        { id: 1, amount: 0, colonyId: 1, mineralId: 1, added: 0 },
+        { id: 2, amount: 0, colonyId: 1, mineralId: 1, added: 0 },
+        { id: 3, amount: 0, colonyId: 3, mineralId: 1, added: 0 }
     ],
 
     transientState: {
 
-    }
+    },
+
 }
 
 // document.dispatchEvent( new CustomEvent("stateChanged") )
@@ -79,8 +83,15 @@ export const setColonies = (Id) => {
 }
 export const setMinerals = (Id) => {
     database.transientState.mineralId = Id
-
 }
+export const setAddedAmount = (value) => {
+    database.transientState.added = value
+}
+
+
+
+
+
 
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
@@ -99,11 +110,40 @@ export const getTransientState = () => {
     return database.transientState
 }
 
+export const getColonyMinerals = () => {
+    return database.colonyMinerals.map(colonyMinerals => ({ ...colonyMinerals }))
+}
+
+
+
+
 const transient = getTransientState()
 
 const minerals = database.mineralFacilities
 
 export const purchaseMineral = () => {
+    // setAddedAmount(parseInt(5))
+    const findGovernor = database.governors.find(
+        (governor) => {
+            return governor.id === transient.governorId
+        })
+
+    if (findGovernor) { // Govenor matches setGovernor
+        const findColony = database.colonies.find(
+            (colony) => {
+                return colony.id === findGovernor.colonyId
+                // Colony matches governor
+            })
+            const filteredColonyMinerals = database.colonyMinerals.filter(
+                (colMineral) => {
+                    return colMineral.colonyId === findColony.id
+                    //Colony matches colonyMinerals
+                })
+                
+    }
+
+   
+
     const newOrder = { ...database.transientState } // Taking a copy of user clicks and putting it into an object. New Order = Shopping Cart
     if (database.colonyMinerals.length === 0) { // Setting an ID for every new item that goes into the minerals table. 
         database.transientState.id = 1
@@ -118,15 +158,18 @@ export const purchaseMineral = () => {
     database.transientState = {}
     // Broadcast custom event to entire documement so that the
     // application can re-render and update state
-    for (const mineral of minerals) {
-        if (mineral.id === transient.mineralId) {
-            let mineralAmount =mineral.amount 
-            mineralAmount -= 5
+    // for (const mineral of minerals) {
+    //     if (mineral.mineralId === transient.mineralId) {
+    //         let mineralAmount = mineral.amount 
+    //         mineralAmount -= 5
             
-        }
-        return mineralAmount
-    }
-    let orderAmount = 5 
+    //     }
+    //     return mineralAmount
+    // }
+   
+
+
+
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
