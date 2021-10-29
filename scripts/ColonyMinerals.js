@@ -28,6 +28,7 @@ export const colonyMinerals = () => {
                 }
             }
         }
+    
     }
     
     html += htmlHeader
