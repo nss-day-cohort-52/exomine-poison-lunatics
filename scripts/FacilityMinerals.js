@@ -6,7 +6,6 @@ import { getMineralFacilities } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
-const transient = getTransientState()
 const mineralFacilities = getMineralFacilities()
 
 document.addEventListener(
@@ -20,6 +19,7 @@ document.addEventListener(
 )
 
 export const facilityMineral = () => {
+    const transient = getTransientState()
     let html = "<h3>"
 
 
@@ -39,14 +39,14 @@ export const facilityMineral = () => {
 
     html += "<ul>"
 
-    for (const mineral of mineralFacilities) {
-        if (mineral.facilityId === transient.facilityId) {
+    for (const mineralFac of mineralFacilities) {
+        if (mineralFac.facilityId === transient.facilityId) {
 
             for (const min of minerals) {
-                if (mineral.mineralId === min.id) {
+                if (mineralFac.mineralId === min.id) {
                     html += `<li>
-                    <input type="radio" name="mineralAmount" value="${mineral.id}" /> 
-                    ${mineral.amount} tons of ${min.name}
+                    <input type="radio" name="mineralAmount" value="${min.id}" /> 
+                    ${mineralFac.amount} tons of ${min.name}
                     </li>`
                 }
 
