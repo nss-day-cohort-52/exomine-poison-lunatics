@@ -6,7 +6,7 @@ import { getMineralFacilities } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
-const mineralFacilities = getMineralFacilities()
+
 
 document.addEventListener(
     "change",
@@ -19,6 +19,8 @@ document.addEventListener(
 )
 
 export const facilityMineral = () => {
+    const mineralFacilities = getMineralFacilities()
+    
     const transient = getTransientState()
     let html = "<h3>"
 

@@ -129,12 +129,13 @@ export const getMineralFacilities = () => {
 
 
 
-const transient = getTransientState()
+
 
 const minerals = database.mineralFacilities
 
 export const purchaseMineral = () => {
-    // setAddedAmount(parseInt(5))
+    const transient = database.transientState
+    
     const findGovernor = database.governors.find(
         (governor) => {
             return governor.id === transient.governorId
